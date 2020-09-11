@@ -1,10 +1,17 @@
 const newWorkUrlPattern = "https://nework.app/workspaces/*";
 
-chrome.commands.onCommand.addListener(function (command) {
-    console.log(command)
+function waitPageLoad(command: string) {
     chrome.tabs.query({ url: newWorkUrlPattern }, function (tabs: any) {
-        console.log(tabs)
-        chrome.tabs.sendMessage(tabs[0].id, { command: command }, function (response) {
-        });
+        // only forcus first tab
+        const tab = tabs.shift();
+        if (tab.status === 'complete') {
+            chrome.tabs.sendMessage(tab.id, { command: command });
+        } else {
+            setTimeout(() => { waitPageLoad(command) }, 50);
+        }
     });
+}
+
+chrome.commands.onCommand.addListener(function (command: string) {
+    waitPageLoad(command)
 });
