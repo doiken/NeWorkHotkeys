@@ -1,0 +1,49 @@
+{
+  "manifest_version": 2,
+  "name": "NeWorkHotkeys",
+  "description": "hotkeys for NeWork",
+  "version": "0.1",
+  "browser_action": {
+    "default_icon": "icon_32.png"
+  },
+  "icons": {
+    "128": "icon_128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://nework.app/workspaces/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "js/content_script.js"
+      ]
+    }
+  ],
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": true
+  },
+  "commands": {
+    "enable_zone": {
+      "description": "switch to zone"
+    },
+    "enable_work": {
+      "description": "switch to work"
+    },
+    "enable_open": {
+      "description": "switch to open"
+    },
+    "toggle_talk": {
+      "description": "(experimental) taggle work/open"
+    },
+    "toggle_bubble": {
+      "description": "toggle bubble-in/out"
+    }
+  },
+  "permissions": [
+    "tabs"
+  ]
+}
