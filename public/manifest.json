@@ -17,12 +17,14 @@
       ],
       "run_at": "document_end",
       "js": [
+        "js/vendor.js",
         "js/content_script.js"
       ]
     }
   ],
   "background": {
     "scripts": [
+      "js/vendor.js",
       "js/background.js"
     ],
     "persistent": true
