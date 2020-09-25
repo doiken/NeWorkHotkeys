@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "NeWorkHotkeys",
   "description": "hotkeys for NeWork",
-  "version": "0.1",
+  "version": "0.3",
   "browser_action": {
     "default_icon": "icon_32.png",
     "default_popup": "popup.html"
