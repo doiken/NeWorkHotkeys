@@ -49,5 +49,8 @@
   "permissions": [
     "storage",
     "tabs"
+  ],
+  "web_accessible_resources": [
+    "*.mp3"
   ]
 }
