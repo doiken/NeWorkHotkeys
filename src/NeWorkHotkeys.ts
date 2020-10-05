@@ -17,8 +17,9 @@ export class NeWorkHotkeys {
         this.play("work");
     }
     async enableOpen(): Promise<void> {
-        (document.querySelector('li.open > button') as HTMLElement).click();
         this.play("open");
+        // wait until sound end
+        setTimeout(() => { (document.querySelector('li.open > button') as HTMLElement).click() }, 300);
     }
     toggleBubble(): void { (document.querySelector('button.bubbleInOut') as HTMLElement).click() }
     toggleTalk(): void {
