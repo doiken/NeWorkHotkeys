@@ -2,9 +2,10 @@
   "manifest_version": 2,
   "name": "NeWorkHotkeys",
   "description": "hotkeys for NeWork",
-  "version": "0.1",
+  "version": "0.4",
   "browser_action": {
-    "default_icon": "icon_32.png"
+    "default_icon": "icon_32.png",
+    "default_popup": "popup.html"
   },
   "icons": {
     "128": "icon_128.png"
@@ -16,12 +17,14 @@
       ],
       "run_at": "document_end",
       "js": [
+        "js/vendor.js",
         "js/content_script.js"
       ]
     }
   ],
   "background": {
     "scripts": [
+      "js/vendor.js",
       "js/background.js"
     ],
     "persistent": true
@@ -44,6 +47,10 @@
     }
   },
   "permissions": [
+    "storage",
     "tabs"
+  ],
+  "web_accessible_resources": [
+    "*.mp3"
   ]
 }

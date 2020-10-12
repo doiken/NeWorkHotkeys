@@ -15,7 +15,9 @@
     "type": "git",
     "url": "https://github.com/doiken/NeWorkHotkeys.git"
   },
-  "dependencies": {},
+  "dependencies": {
+    "chrome-extension-async": "^3.4.1"
+  },
   "devDependencies": {
     "@types/chrome": "0.0.103",
     "@types/jest": "^25.2.3",
